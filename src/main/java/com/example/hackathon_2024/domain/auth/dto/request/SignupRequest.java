@@ -1,5 +1,6 @@
 package com.example.hackathon_2024.domain.auth.dto.request;
 
+import com.example.hackathon_2024.domain.user.entity.enums.UserType;
 import jakarta.validation.constraints.NotBlank;
 import lombok.Getter;
 
@@ -15,7 +16,10 @@ public class SignupRequest {
     private String password;
 
     @NotBlank
-    private String nickname;
+    private String name;
+
+    @NotBlank
+    private UserType userType;
 
     private List<String> tagName;
 }
