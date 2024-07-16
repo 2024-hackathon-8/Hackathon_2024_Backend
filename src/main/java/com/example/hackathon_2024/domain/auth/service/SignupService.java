@@ -33,7 +33,7 @@ public class SignupService {
                         .userType(request.getUser_type())
                         .build());
 
-        if(request.getTag_name() != null) {
+        if(!request.getTag_name().isEmpty()) {
             request.getTag_name().stream()
                     .map(tagRepository::findByTagName)
                     .forEach(tag -> userTagRepository.save(new UserTag(new UserTagId(), user, tag)));
