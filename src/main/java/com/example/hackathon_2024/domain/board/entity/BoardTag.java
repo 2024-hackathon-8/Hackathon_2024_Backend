@@ -1,10 +1,7 @@
 package com.example.hackathon_2024.domain.board.entity;
 
 import com.example.hackathon_2024.domain.tag.entity.Tag;
-import jakarta.persistence.EmbeddedId;
-import jakarta.persistence.Entity;
-import jakarta.persistence.JoinColumn;
-import jakarta.persistence.ManyToOne;
+import jakarta.persistence.*;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
 import lombok.Getter;
@@ -20,10 +17,12 @@ public class BoardTag {
     @EmbeddedId
     private BoardTagId id;
 
+    @MapsId("boardId")
     @ManyToOne
     @JoinColumn(name = "board_id")
     private Board boardId;
 
+    @MapsId("tagId")
     @ManyToOne
     @JoinColumn(name = "tag_id")
     private Tag tagId;
