@@ -7,7 +7,7 @@ import lombok.Getter;
 public class LoginRequest {
 
     @NotBlank
-    private String accountId;
+    private String account_id;
 
     @NotBlank
     private String password;

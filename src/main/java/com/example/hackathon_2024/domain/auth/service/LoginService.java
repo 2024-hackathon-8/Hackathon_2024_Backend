@@ -22,11 +22,11 @@ public class LoginService {
     private final JwtTokenProvider jwtTokenProvider;
 
     public TokenResponse login(LoginRequest request) {
-        User user = userRepository.findByAccountId(request.getAccountId())
+        User user = userRepository.findByAccountId(request.getAccount_id())
                 .orElseThrow(()-> UserNotFoundException.EXCEPTION);
 
         if(!passwordEncoder.matches(request.getPassword(), user.getPassword())) throw PasswordMismatchException.EXCEPTION;
 
-        return jwtTokenProvider.receiveToken(request.getAccountId());
+        return jwtTokenProvider.receiveToken(request.getAccount_id());
     }
 }

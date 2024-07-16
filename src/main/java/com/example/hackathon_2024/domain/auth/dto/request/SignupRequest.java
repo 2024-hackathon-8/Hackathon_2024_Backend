@@ -2,6 +2,7 @@ package com.example.hackathon_2024.domain.auth.dto.request;
 
 import com.example.hackathon_2024.domain.user.entity.enums.UserType;
 import jakarta.validation.constraints.NotBlank;
+import jakarta.validation.constraints.NotNull;
 import lombok.Getter;
 
 import java.util.List;
@@ -10,7 +11,7 @@ import java.util.List;
 public class SignupRequest {
 
     @NotBlank
-    private String accountId;
+    private String account_id;
 
     @NotBlank
     private String password;
@@ -18,8 +19,8 @@ public class SignupRequest {
     @NotBlank
     private String name;
 
-    @NotBlank
-    private UserType userType;
+    @NotNull
+    private UserType user_type;
 
-    private List<String> tagName;
+    private List<String> tag_name;
 }

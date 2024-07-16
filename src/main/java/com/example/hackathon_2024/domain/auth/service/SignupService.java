@@ -26,15 +26,17 @@ public class SignupService {
     public void signup(SignupRequest request) {
         User user = userRepository.save(
                 User.builder()
-                        .accountId(request.getAccountId())
+                        .accountId(request.getAccount_id())
                         .password(passwordEncoder.encode(request.getPassword()))
                         .name(request.getName())
                         .password(passwordEncoder.encode(request.getPassword()))
-                        .userType(request.getUserType())
+                        .userType(request.getUser_type())
                         .build());
 
-        request.getTagName().stream()
-                .map(tagRepository::findByTagName)
-                .forEach(tag -> userTagRepository.save(new UserTag(new UserTagId(), user, tag)));
+        if(request.getTag_name() != null) {
+            request.getTag_name().stream()
+                    .map(tagRepository::findByTagName)
+                    .forEach(tag -> userTagRepository.save(new UserTag(new UserTagId(), user, tag)));
+        }
     }
 }
