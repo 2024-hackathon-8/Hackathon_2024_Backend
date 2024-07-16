@@ -18,12 +18,12 @@ public class BoardTag {
     private BoardTagId id;
 
     @MapsId("boardId")
-    @ManyToOne
-    @JoinColumn(name = "board_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "board_id", nullable = false)
     private Board boardId;
 
     @MapsId("tagId")
-    @ManyToOne
-    @JoinColumn(name = "tag_id")
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "tag_id", nullable = false)
     private Tag tagId;
 }

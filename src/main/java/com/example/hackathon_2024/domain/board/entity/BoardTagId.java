@@ -11,8 +11,9 @@ import java.io.Serializable;
 @EqualsAndHashCode
 @NoArgsConstructor
 public class BoardTagId implements Serializable {
-
+    @Column(name = "board_id")
     private Long boardId;
 
+    @Column(name = "tag_id")
     private Long tagId;
 }
