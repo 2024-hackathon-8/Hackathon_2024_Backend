@@ -1,7 +1,10 @@
 package com.example.hackathon_2024.domain.user.entity;
 
+import com.example.hackathon_2024.domain.user.entity.enums.UserType;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.EnumType;
+import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.Id;
 import lombok.AccessLevel;
@@ -32,15 +35,13 @@ public class User {
     @Column(name = "password", nullable = false)
     private String password;
 
-    @Column(name = "nickname", nullable = false)
-    private String nickname;
+    @Column(name = "name", nullable = false)
+    private String name;
 
     @Column(name = "profile_img_url")
     private String profileImgUrl;
 
-    @Column(name = "heart_count", nullable = false)
-    private Integer heartCount = 0;
-
-    @Column(name = "one_liner")
-    private String oneLiner;
+    @Enumerated(EnumType.STRING)
+    @Column(name = "user_type", nullable = false)
+    private UserType userType;
 }
