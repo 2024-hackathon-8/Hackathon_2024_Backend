@@ -10,15 +10,15 @@ import java.util.List;
 @Data
 public class DetailBusinessResponse {
 
-    private String businessName;
+    private String business_name;
 
-    private String oneLiner;
+    private String one_liner;
 
     private String vision;
 
-    private String writePurpose;
+    private String write_purpose;
 
-    private Long totalInvestment;
+    private Long total_investment;
 
     List<Tag> tags;
 }

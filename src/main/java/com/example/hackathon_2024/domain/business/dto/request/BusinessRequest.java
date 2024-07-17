@@ -10,19 +10,19 @@ import java.util.List;
 public class BusinessRequest {
 
     @NotBlank
-    private String businessName;
+    private String business_name;
 
     @NotBlank
-    private String oneLiner;
+    private String one_liner;
 
     @NotBlank
-    private String businessIntroduce;
+    private String business_introduce;
 
     @NotBlank
     private String vision;
 
     @NotNull
-    private Long totalInvestment;
+    private Long total_investment;
 
     private List<String> tags;
 }

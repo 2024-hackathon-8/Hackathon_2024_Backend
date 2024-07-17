@@ -7,5 +7,5 @@ import lombok.Getter;
 public class AddTagRequest {
 
     @NotBlank
-    private String tagName;
+    private String tag_name;
 }

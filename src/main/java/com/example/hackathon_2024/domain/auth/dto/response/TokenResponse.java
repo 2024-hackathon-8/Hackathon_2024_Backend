@@ -9,11 +9,11 @@ import java.util.Date;
 @Builder
 public class TokenResponse {
 
-    private String accessToken;
+    private String access_token;
 
-    private String refreshToken;
+    private String refresh_token;
 
-    private Date accessExpiredAt;
+    private Date access_expired_at;
 
-    private Date refreshExpiredAt;
+    private Date refresh_expired_at;
 }
