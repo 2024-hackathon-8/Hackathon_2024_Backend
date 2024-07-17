@@ -18,6 +18,9 @@ public enum ErrorCode {
     USER_NOT_FOUND(404, "사용자를 찾을 수 없습니다."),
     PASSWORD_MISMATCH(401, "비밀번호가 일치하지 않습니다."),
 
+    // business
+    BUSINESS_NOT_FOUND(404, "비즈니스를 찾을 수 없습니다."),
+
     // tag
     DUPLICATED_TAG(409, "중복되는 태그가 존재합니다."),
 

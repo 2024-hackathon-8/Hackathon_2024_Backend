@@ -1,4 +1,4 @@
-package com.example.hackathon_2024.domain.board.entity;
+package com.example.hackathon_2024.domain.business.entity;
 
 import com.example.hackathon_2024.domain.tag.entity.Tag;
 import jakarta.persistence.*;
@@ -12,18 +12,18 @@ import lombok.NoArgsConstructor;
 @Builder
 @AllArgsConstructor
 @NoArgsConstructor
-public class BoardTag {
+public class BusinessTag {
 
     @EmbeddedId
-    private BoardTagId id;
+    private BusinessTagId id;
 
-    @MapsId("boardId")
+    @MapsId("businessId")
     @ManyToOne(fetch = FetchType.LAZY)
-    @JoinColumn(name = "board_id", nullable = false)
-    private Board boardId;
+    @JoinColumn(name = "business_id", nullable = false)
+    private Business business;
 
     @MapsId("tagId")
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "tag_id", nullable = false)
-    private Tag tagId;
+    private Tag tag;
 }
