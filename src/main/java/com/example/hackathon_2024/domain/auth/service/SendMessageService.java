@@ -1,5 +1,7 @@
-package com.example.hackathon_2024.domain.test;
+package com.example.hackathon_2024.domain.auth.service;
 
+import com.example.hackathon_2024.domain.auth.dto.request.PhoneNumberRequest;
+import com.example.hackathon_2024.domain.auth.repository.SmsCertification;
 import lombok.RequiredArgsConstructor;
 import net.nurigo.java_sdk.api.Message;
 import net.nurigo.java_sdk.exceptions.CoolsmsException;
@@ -12,7 +14,7 @@ import java.util.Random;
 
 @Service
 @RequiredArgsConstructor
-public class MessageService {
+public class SendMessageService {
 
     private final SmsCertification smsCertification;
 
@@ -47,14 +49,14 @@ public class MessageService {
     }
 
     // 인증번호 전송하기
-    public String sendSMS(String phoneNumber) {
+    public String sendSMS(PhoneNumberRequest request) {
         Message coolsms = new Message(apiKey, apiSecret);
 
         // 랜덤한 인증 번호 생성
         String randomNum = createRandomNumber();
 
         // 발신 정보 설정
-        HashMap<String, String> params = makeParams(phoneNumber, randomNum);
+        HashMap<String, String> params = makeParams(request.getPhone_number(), randomNum);
 
         try {
             JSONObject obj = (JSONObject) coolsms.send(params);
@@ -64,24 +66,8 @@ public class MessageService {
             System.out.println(e.getCode());
         }
 
-        smsCertification.createSmsCertification(phoneNumber, randomNum);
+        smsCertification.createSmsCertification(request.getPhone_number(), randomNum);
 
         return "문자 전송이 완료되었습니다.";
-    }
-
-    // 인증 번호 검증
-    public String verifySms(UserDto  requestDto) {
-        if (isVerify(requestDto)) {
-            throw new IllegalArgumentException("인증번호가 일치하지 않습니다.");
-        }
-        smsCertification.deleteSmsCertification(requestDto.getPhone_number());
-
-        return "인증 완료되었습니다.";
-    }
-
-    private boolean isVerify(UserDto requestDto) {
-        return !(smsCertification.hasKey(requestDto.getPhone_number()) &&
-                smsCertification.getSmsCertification(requestDto.getPhone_number())
-                        .equals(requestDto.getRandom_number()));
     }
 }

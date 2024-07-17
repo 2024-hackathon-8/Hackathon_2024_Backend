@@ -1,4 +1,4 @@
-package com.example.hackathon_2024.domain.test;
+package com.example.hackathon_2024.domain.auth.repository;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.redis.core.StringRedisTemplate;
