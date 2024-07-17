@@ -16,7 +16,7 @@ public class InvestRequest {
     private String phone_number;
 
     @NotNull
-    private LocalDate invest_period;
+    private LocalDate prefer_invest_period;
 
     @NotNull
     private Long money;

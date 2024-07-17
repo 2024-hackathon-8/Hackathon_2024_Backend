@@ -34,8 +34,8 @@ public class Invest {
     @Column(name = "phone_number", nullable = false)
     private String phoneNumber;
 
-    @Column(name = "contract_period", nullable = false)
-    private LocalDate contractPeriod;
+    @Column(name = "prefer_contract_period", nullable = false)
+    private LocalDate preferContractPeriod;
 
     @Column(name = "money", nullable = false)
     private Long money;

@@ -40,7 +40,7 @@ public class RequestInvestService {
         investRepository.save(
                 Invest.builder()
                         .phoneNumber(request.getPhone_number())
-                        .contractPeriod(request.getInvest_period())
+                        .preferContractPeriod(request.getPrefer_invest_period())
                         .money(request.getMoney())
                         .business(business)
                         .investType(InvestType.CONTRACT_WRITING)
