@@ -39,6 +39,8 @@ cloud:
 
 server:
   port: 8080
+  servlet:
+    context-path: /founderz
 
 coolsms:
   apikey: ${API_KEY}
