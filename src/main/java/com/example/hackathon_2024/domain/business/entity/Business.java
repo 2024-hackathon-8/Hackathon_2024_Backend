@@ -44,4 +44,8 @@ public class Business {
     @ManyToOne
     @JoinColumn(name = "account_id")
     private User user;
+
+    public void updateTotalInvestment(Long amount) {
+        this.totalInvestment += amount;
+    }
 }

@@ -35,5 +35,6 @@ public class ConclusionContractService {
 
         contract.conclusionContract(request.getAddress(), user.getName(), user.getPhoneNumber(), request.getSignature_img_url());
         invest.changeInvestType(InvestType.CONTRACT_SUCCESS);
+        invest.getBusiness().updateTotalInvestment(invest.getMoney());
     }
 }

@@ -38,6 +38,8 @@ public class RequestInvestService {
 
         User user = userFacade.currentUser();
 
+        user.updateMyAmount(request.getMoney());
+
         investRepository.save(
                 Invest.builder()
                         .phoneNumber(request.getPhone_number())

@@ -47,4 +47,8 @@ public class User {
     @Enumerated(EnumType.STRING)
     @Column(name = "user_type", nullable = false)
     private UserType userType;
+
+    public void updateMyAmount(Long amount) {
+        this.myAmount =- amount;
+    }
 }
