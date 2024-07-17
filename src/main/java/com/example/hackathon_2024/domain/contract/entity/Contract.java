@@ -51,11 +51,11 @@ public class Contract {
     @Column(name = "business_name", nullable = false)
     private String businessName;
 
-    @Column(name = "take_money", nullable = false)
-    private double takeMoney;
+    @Column(name = "sales_ratio", nullable = false)
+    private double salesRatio;
 
-    @Column(name = "take+_day", nullable = false)
-    private Integer takeDay;
+    @Column(name = "sales_days", nullable = false)
+    private Integer salesDays;
 
     @Column(name = "repayment_delay_day", nullable = false)
     private Integer repaymentDelayDay;
@@ -63,8 +63,8 @@ public class Contract {
     @Column(name = "overdue_quarter", nullable = false)
     private Integer overdueQuarter;
 
-    @Column(name = "overdue_money")
-    private Integer overdueMoney;
+    @Column(name = "overdue_ratio", nullable = false)
+    private double overdueRatio;
 
     @ElementCollection
     private List<String> specialMatter;
