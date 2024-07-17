@@ -64,7 +64,7 @@ public class SecurityConfig {
                         .requestMatchers("/business/**")
                         .authenticated()
 
-                        .requestMatchers("/auth/**", "/tag/**", "/message/**", "/api/**")
+                        .requestMatchers("/auth/**", "/tag/**", "/message/**", "/api/**", "/invest/**")
                         .permitAll()
                 )
 

@@ -17,11 +17,12 @@ public class CreateAlarmService {
     private final UserRepository userRepository;
 
     public void crateAlarm(AlarmRequest request) {
+
         alarmRepository.save(
                 Alarm.builder()
                         .alarmType(request.getAlarm_type())
-                        .senderAccountId(userRepository.findByAccountId(request.getSender_account_id()).orElseThrow(()-> UserNotFoundException.EXCEPTION))
-                        .recipientAccountId(userRepository.findByAccountId(request.getRecipient_account_id()).orElseThrow(()-> UserNotFoundException.EXCEPTION))
+                        .senderName(request.getSender_name())
+                        .recipientId(userRepository.findByAccountId(request.getRecipient_account_id()).orElseThrow(()-> UserNotFoundException.EXCEPTION))
                         .money(request.getMoney())
                         .sendTime(request.getSend_time())
                         .build());

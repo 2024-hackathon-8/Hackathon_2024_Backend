@@ -11,7 +11,6 @@ import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
-import jakarta.persistence.OneToOne;
 import lombok.AccessLevel;
 import lombok.AllArgsConstructor;
 import lombok.Builder;
@@ -35,13 +34,12 @@ public class Alarm {
     @Column(name = "alarm_type", nullable = false)
     private AlarmType alarmType;
 
-    @OneToOne
-    @JoinColumn(name = "sender_account_id")
-    private User senderAccountId;
+    @Column(name = "sender_name", nullable = false)
+    private String senderName;
 
     @ManyToOne
-    @JoinColumn(name = "recipient_account_id")
-    private User recipientAccountId;
+    @JoinColumn(name = "recipient_id")
+    private User recipientId;
 
     @Column(name = "money")
     private Long money;
