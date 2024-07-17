@@ -29,9 +29,9 @@ public class SelectAllBusinessService {
     private AllBusinessResponse createAllBusinessResponse(Business business) {
         List<Tag> tags = getTagsForBusiness(business.getId());
         return AllBusinessResponse.builder()
-                .businessName(business.getBusinessName())
-                .oneLiner(business.getOneLiner())
-                .totalInvestment(business.getTotalInvestment())
+                .business_name(business.getBusinessName())
+                .one_liner(business.getOneLiner())
+                .total_investment(business.getTotalInvestment())
                 .tags(tags)
                 .build();
     }
