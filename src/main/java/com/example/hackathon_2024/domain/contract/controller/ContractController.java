@@ -2,8 +2,10 @@ package com.example.hackathon_2024.domain.contract.controller;
 
 import com.example.hackathon_2024.domain.contract.dto.request.ContractRequest;
 import com.example.hackathon_2024.domain.contract.dto.response.CheckContractResponse;
+import com.example.hackathon_2024.domain.contract.dto.response.ContractDetailResponse;
 import com.example.hackathon_2024.domain.contract.dto.response.ContractWritePageResponse;
 import com.example.hackathon_2024.domain.contract.service.CheckContractService;
+import com.example.hackathon_2024.domain.contract.service.ContractDetailsService;
 import com.example.hackathon_2024.domain.contract.service.CreateContractService;
 import com.example.hackathon_2024.domain.contract.service.ShowContractWritePageService;
 import lombok.RequiredArgsConstructor;
@@ -25,6 +27,8 @@ public class ContractController {
 
     private final CheckContractService checkContractService;
 
+    private final ContractDetailsService contractDetailsService;
+
     @GetMapping("/{investId}")
     public ContractWritePageResponse showContractWritePage(@PathVariable Long investId) {
         return showContractWritePageService.showContractWritePage(investId);
@@ -35,8 +39,13 @@ public class ContractController {
         createContractService.createContract(request);
     }
 
-    @GetMapping("/check-contract")
+    @GetMapping("/check")
     public CheckContractResponse checkContract() {
         return checkContractService.checkContract();
+    }
+
+    @GetMapping("/detail/{investId}")
+    public ContractDetailResponse contractDetail(@PathVariable Long investId) {
+        return contractDetailsService.contractDetail(investId);
     }
 }

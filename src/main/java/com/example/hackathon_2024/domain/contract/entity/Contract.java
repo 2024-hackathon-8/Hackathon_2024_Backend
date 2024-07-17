@@ -4,6 +4,7 @@ import com.example.hackathon_2024.domain.invest.entity.Invest;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
 import jakarta.persistence.Entity;
+import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -66,7 +67,7 @@ public class Contract {
     @Column(name = "overdue_ratio", nullable = false)
     private double overdueRatio;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     private List<String> specialMatter;
 
     @Column(name = "address", nullable = false)
