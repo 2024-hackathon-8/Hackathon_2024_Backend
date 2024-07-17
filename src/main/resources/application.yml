@@ -19,17 +19,28 @@ spring:
 jwt:
   header: Authorization
   prefix: Bearer
-  secret: ${SECRET:fewbhauifaewhui}
+  secret: ${SECRET}
   accessExpiration: 271000
   refreshExpiration: 604800
 redis:
   host: ${REDIS_HOST:localhost}
   port: 6379
+cloud:
+  aws:
+    credentials:
+      accessKey: ${AWS_ACCESS_KEY}
+      secretKey: ${SECRET_KEY}
+    s3:
+      bucket: daedong
+    region:
+      static: ap-northeast-2
+  stack:
+    auto: false
 
 server:
   port: 8080
 
 coolsms:
-  apikey: NCSYKPAWFVP4H6JW
-  apisecret: SNVSNOIINOLQMJGCYNEQPEQUHOVYSD6W
-  fromnumber: 010-5706-2562
+  apikey: ${API_KEY}
+  apisecret: ${API_SECRET}
+  fromnumber: ${PHONE_NUMBER}
