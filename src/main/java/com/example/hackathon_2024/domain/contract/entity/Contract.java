@@ -95,10 +95,14 @@ public class Contract {
     @Column(name = "signature_img_url_b")
     private String signatureImgUrlB;
 
+    @Column(name = "conclusion_date")
+    private LocalDate conclusionDate;
+
     public void conclusionContract(String addressB, String representativeNameB, String representativePhoneNumberB, String signatureImgUrlB) {
         this.addressB = addressB;
         this.representativeNameB = representativeNameB;
         this.representativePhoneNumberB = representativePhoneNumberB;
         this.signatureImgUrlB = signatureImgUrlB;
+        this.conclusionDate = LocalDate.now();
     }
 }
