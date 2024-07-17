@@ -13,8 +13,8 @@ import com.example.hackathon_2024.domain.invest.repository.InvestRepository;
 import com.example.hackathon_2024.domain.user.entity.User;
 import com.example.hackathon_2024.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
-import org.springframework.security.web.access.WebInvocationPrivilegeEvaluator;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 import java.time.LocalDate;
 
@@ -30,6 +30,7 @@ public class RequestInvestService {
 
     private final BusinessRepository businessRepository;
 
+    @Transactional
     public void requestInvest(InvestRequest request) {
 
         Business business = businessRepository.findById(request.getBusiness_id())

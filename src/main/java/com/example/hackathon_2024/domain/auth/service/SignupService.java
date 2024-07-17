@@ -10,6 +10,7 @@ import com.example.hackathon_2024.domain.user.repository.UserTagRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -23,6 +24,7 @@ public class SignupService {
 
     private final UserTagRepository userTagRepository;
 
+    @Transactional
     public void signup(SignupRequest request) {
         User user = userRepository.save(
                 User.builder()
@@ -31,6 +33,7 @@ public class SignupService {
                         .name(request.getName())
                         .password(passwordEncoder.encode(request.getPassword()))
                         .phoneNumber(request.getPhone_number())
+                        .myAmount(0L)
                         .userType(request.getUser_type())
                         .build());
 
