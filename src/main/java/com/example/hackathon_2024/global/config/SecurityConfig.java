@@ -61,7 +61,10 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(authorize -> authorize
 
-                        .requestMatchers("/board", "/auth/**", "/tag/**")
+                        .requestMatchers("/business/**")
+                        .authenticated()
+
+                        .requestMatchers("/auth/**", "/tag/**")
                         .permitAll()
                 )
 
