@@ -28,3 +28,8 @@ redis:
 
 server:
   port: 8080
+
+coolsms:
+  apikey: NCSYKPAWFVP4H6JW
+  apisecret: SNVSNOIINOLQMJGCYNEQPEQUHOVYSD6W
+  fromnumber: 010-5706-2562
