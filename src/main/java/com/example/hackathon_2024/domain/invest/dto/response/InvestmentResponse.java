@@ -9,6 +9,8 @@ import lombok.Getter;
 @AllArgsConstructor
 public class InvestmentResponse {
 
+    private Long investId;
+
     private String business_name;
 
     private Long invest_money;
@@ -16,8 +18,9 @@ public class InvestmentResponse {
     private InvestType investType;
 
     public InvestmentResponse(Invest invest) {
+        this.investId = invest.getId();
         this.business_name = invest.getBusiness().getBusinessName();
         this.invest_money = invest.getMoney();
-        investType = invest.getInvestType();
+        this.investType = invest.getInvestType();
     }
 }

@@ -61,7 +61,7 @@ public class SecurityConfig {
 
                 .authorizeHttpRequests(authorize -> authorize
 
-                        .requestMatchers("/business")
+                        .requestMatchers("/business", "/contract/**")
                         .authenticated()
 
                         .requestMatchers("/user/**", "/auth/**", "/tag/**", "/message/**", "/api/**", "/invest/**", "/image", "/business/all", "/business/details/")

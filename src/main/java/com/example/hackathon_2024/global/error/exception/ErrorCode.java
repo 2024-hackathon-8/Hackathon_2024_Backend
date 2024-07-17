@@ -24,6 +24,9 @@ public enum ErrorCode {
     // tag
     DUPLICATED_TAG(409, "중복되는 태그가 존재합니다."),
 
+    // invest
+    INVEST_NOT_FOUND(404, "해당하는 투자를 찾을 수 없습니다."),
+
     //image
     IMAGE_UPLOAD_FAIL(400, "이미지 업로드에 실패 했습니다."),
     WRONG_IMAGE(400, "잘못된 이미지 입니다."),

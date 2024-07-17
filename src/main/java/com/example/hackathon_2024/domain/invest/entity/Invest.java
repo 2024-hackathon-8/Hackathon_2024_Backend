@@ -51,4 +51,8 @@ public class Invest {
     @Enumerated(EnumType.STRING)
     @Column(name = "invest_type", nullable = false)
     private InvestType investType;
+
+    public void changeInvestType(InvestType investType) {
+        this.investType = investType;
+    }
 }

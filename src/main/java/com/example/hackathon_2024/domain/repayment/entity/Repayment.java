@@ -1,6 +1,7 @@
 package com.example.hackathon_2024.domain.repayment.entity;
 
 import com.example.hackathon_2024.domain.invest.entity.Invest;
+import com.example.hackathon_2024.domain.repayment.dto.request.RepaymentRequest;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -36,4 +37,10 @@ public class Repayment {
     @ManyToOne
     @JoinColumn(name = "invest_id")
     private Invest invest;
+
+    public Repayment(RepaymentRequest request, Invest invest) {
+        this.repaymentMoney = request.getRepayment_money();
+        this.repaymentDate = request.getRepayment_date();
+        this.invest = invest;
+    }
 }
