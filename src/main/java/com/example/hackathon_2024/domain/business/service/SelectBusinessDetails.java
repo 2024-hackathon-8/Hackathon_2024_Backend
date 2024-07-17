@@ -22,11 +22,11 @@ public class SelectBusinessDetails {
                 .orElseThrow(()-> BusinessNotFoundException.EXCEPTION);
 
         return DetailBusinessResponse.builder()
-                .businessName(business.getBusinessName())
-                .oneLiner(business.getOneLiner())
+                .business_name(business.getBusinessName())
+                .one_liner(business.getOneLiner())
                 .vision(business.getVision())
-                .writePurpose(business.getWritePurpose())
-                .totalInvestment(business.getTotalInvestment())
+                .write_purpose(business.getWritePurpose())
+                .total_investment(business.getTotalInvestment())
                 .tags(businessTagRepository.findAllByBusinessId(businessId).stream().map(BusinessTag::getTag).toList())
                 .build();
     }

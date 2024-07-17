@@ -100,10 +100,10 @@ public class JwtTokenProvider {
 
         return TokenResponse
                 .builder()
-                .accessToken(createAccessToken(accountId))
-                .refreshToken(createRefreshToken(accountId))
-                .accessExpiredAt(new Date(now.getTime() + jwtProperties.getAccessExpiration()))
-                .refreshExpiredAt(new Date(now.getTime() + jwtProperties.getRefreshExpiration()))
+                .access_token(createAccessToken(accountId))
+                .refresh_token(createRefreshToken(accountId))
+                .access_expired_at(new Date(now.getTime() + jwtProperties.getAccessExpiration()))
+                .refresh_expired_at(new Date(now.getTime() + jwtProperties.getRefreshExpiration()))
                 .build();
     }
 

@@ -14,8 +14,8 @@ public class AddTagService {
     private final TagRepository tagRepository;
 
     public void addTag(AddTagRequest request) {
-        if(tagRepository.existsByTagName(request.getTagName())) throw DuplicatedTagException.EXCEPTION;
+        if(tagRepository.existsByTagName(request.getTag_name())) throw DuplicatedTagException.EXCEPTION;
 
-        tagRepository.save(new Tag(request.getTagName()));
+        tagRepository.save(new Tag(request.getTag_name()));
     }
 }

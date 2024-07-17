@@ -26,11 +26,11 @@ public class CreateBusinessService {
     public void createBusiness(BusinessRequest request) {
        Business business = businessRepository.save(
                Business.builder()
-                    .businessName(request.getBusinessName())
-                    .oneLiner(request.getOneLiner())
-                    .businessIntroduce(request.getBusinessIntroduce())
+                    .businessName(request.getBusiness_name())
+                    .oneLiner(request.getOne_liner())
+                    .businessIntroduce(request.getBusiness_introduce())
                     .vision(request.getVision())
-                    .totalInvestment(request.getTotalInvestment())
+                    .totalInvestment(request.getTotal_investment())
                     .user(userFacade.currentUser())
                     .build());
 
