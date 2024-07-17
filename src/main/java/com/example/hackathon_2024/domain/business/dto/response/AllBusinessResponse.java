@@ -9,8 +9,14 @@ import java.util.List;
 @Builder
 @Data
 public class AllBusinessResponse {
+
+    private Long business_id;
+
     private String business_name;
+
     private String one_liner;
+
     private Long total_investment;
+
     private List<Tag> tags;
 }

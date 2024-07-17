@@ -29,6 +29,7 @@ public class SelectAllBusinessService {
     private AllBusinessResponse createAllBusinessResponse(Business business) {
         List<Tag> tags = getTagsForBusiness(business.getId());
         return AllBusinessResponse.builder()
+                .business_id(business.getId())
                 .business_name(business.getBusinessName())
                 .one_liner(business.getOneLiner())
                 .total_investment(business.getTotalInvestment())
