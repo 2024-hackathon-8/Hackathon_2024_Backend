@@ -19,6 +19,9 @@ public class SignupRequest {
     @NotBlank
     private String name;
 
+    @NotBlank
+    private String phone_number;
+
     @NotNull
     private UserType user_type;
 

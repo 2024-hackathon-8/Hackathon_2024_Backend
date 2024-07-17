@@ -11,13 +11,13 @@ public class VerifySmsService {
 
     private final SmsCertification smsCertification;
 
-    public String verifySms(VerifyRequest requestDto) {
+    public Boolean verifySms(VerifyRequest requestDto) {
         if (isVerify(requestDto)) {
-            throw new IllegalArgumentException("인증번호가 일치하지 않습니다.");
+            return false;
         }
         smsCertification.deleteSmsCertification(requestDto.getPhone_number());
 
-        return "인증 완료되었습니다.";
+        return true;
     }
 
     private boolean isVerify(VerifyRequest requestDto) {

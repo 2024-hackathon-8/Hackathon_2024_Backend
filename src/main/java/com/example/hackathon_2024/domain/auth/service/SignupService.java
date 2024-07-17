@@ -30,6 +30,7 @@ public class SignupService {
                         .password(passwordEncoder.encode(request.getPassword()))
                         .name(request.getName())
                         .password(passwordEncoder.encode(request.getPassword()))
+                        .phoneNumber(request.getPhone_number())
                         .userType(request.getUser_type())
                         .build());
 

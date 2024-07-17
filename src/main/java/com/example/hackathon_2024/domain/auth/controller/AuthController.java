@@ -49,7 +49,7 @@ public class AuthController {
     }
 
     @PostMapping("/verifySms")
-    public String verifySms(@RequestBody VerifyRequest request) {
+    public Boolean verifySms(@RequestBody VerifyRequest request) {
         return verifySmsService.verifySms(request);
     }
 }
