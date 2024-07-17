@@ -23,7 +23,7 @@ public class BusinessController {
     private final SelectBusinessDetails selectBusinessDetails;
 
     @PostMapping()
-    public void createBusiness(BusinessRequest request) {
+    public void createBusiness(@RequestBody BusinessRequest request) {
         createBusinessService.createBusiness(request);
     }
 

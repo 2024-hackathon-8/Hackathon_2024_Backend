@@ -8,6 +8,7 @@ import com.example.hackathon_2024.domain.business.repository.BusinessRepository;
 import com.example.hackathon_2024.domain.business.repository.BusinessTagRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
+import org.springframework.transaction.annotation.Transactional;
 
 @Service
 @RequiredArgsConstructor
@@ -17,6 +18,7 @@ public class SelectBusinessDetails {
 
     private final BusinessTagRepository businessTagRepository;
 
+    @Transactional
     public DetailBusinessResponse selectBusinessDetails(Long businessId) {
         Business business = businessRepository.findById(businessId)
                 .orElseThrow(()-> BusinessNotFoundException.EXCEPTION);

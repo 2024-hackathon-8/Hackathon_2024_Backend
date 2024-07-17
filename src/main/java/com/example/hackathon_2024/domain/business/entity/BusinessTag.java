@@ -18,12 +18,12 @@ public class BusinessTag {
     private BusinessTagId id;
 
     @MapsId("businessId")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "business_id", nullable = false)
     private Business business;
 
     @MapsId("tagId")
-    @ManyToOne(fetch = FetchType.LAZY)
+    @ManyToOne(fetch = FetchType.EAGER)
     @JoinColumn(name = "tag_id", nullable = false)
     private Tag tag;
 }
