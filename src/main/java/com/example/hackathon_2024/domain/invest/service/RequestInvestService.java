@@ -29,7 +29,6 @@ public class RequestInvestService {
     private final UserFacade userFacade;
 
     private final BusinessRepository businessRepository;
-    private final WebInvocationPrivilegeEvaluator privilegeEvaluator;
 
     public void requestInvest(InvestRequest request) {
 
