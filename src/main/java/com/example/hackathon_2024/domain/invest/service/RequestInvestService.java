@@ -8,9 +8,12 @@ import com.example.hackathon_2024.domain.business.exception.BusinessNotFoundExce
 import com.example.hackathon_2024.domain.business.repository.BusinessRepository;
 import com.example.hackathon_2024.domain.invest.dto.request.InvestRequest;
 import com.example.hackathon_2024.domain.invest.entity.Invest;
+import com.example.hackathon_2024.domain.invest.entity.enums.InvestType;
 import com.example.hackathon_2024.domain.invest.repository.InvestRepository;
+import com.example.hackathon_2024.domain.user.entity.User;
 import com.example.hackathon_2024.domain.user.facade.UserFacade;
 import lombok.RequiredArgsConstructor;
+import org.springframework.security.web.access.WebInvocationPrivilegeEvaluator;
 import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
@@ -26,11 +29,14 @@ public class RequestInvestService {
     private final UserFacade userFacade;
 
     private final BusinessRepository businessRepository;
+    private final WebInvocationPrivilegeEvaluator privilegeEvaluator;
 
     public void requestInvest(InvestRequest request) {
 
         Business business = businessRepository.findById(request.getBusiness_id())
                         .orElseThrow(()-> BusinessNotFoundException.EXCEPTION);
+
+        User user = userFacade.currentUser();
 
         investRepository.save(
                 Invest.builder()
@@ -38,12 +44,14 @@ public class RequestInvestService {
                         .contractPeriod(request.getInvest_period())
                         .money(request.getMoney())
                         .business(business)
+                        .investType(InvestType.CONTRACT_WRITING)
+                        .user(user)
                         .build());
 
         createAlarmService.crateAlarm(
                 AlarmRequest.builder()
                         .alarm_type(AlarmType.INVESTMENT_REQUEST)
-                        .sender_name(userFacade.currentUser().getName())
+                        .sender_name(user.getName())
                         .recipient_account_id(business.getUser().getAccountId())
                         .money(request.getMoney())
                         .send_time(LocalDate.now())
