@@ -38,8 +38,11 @@ public class User {
     @Column(name = "name", nullable = false)
     private String name;
 
-    @Column(name = "profile_img_url")
-    private String profileImgUrl;
+    @Column(name = "phone_number", nullable = false)
+    private String phoneNumber;
+
+    @Column(name = "my_amount", nullable = false)
+    private Long myAmount;
 
     @Enumerated(EnumType.STRING)
     @Column(name = "user_type", nullable = false)
