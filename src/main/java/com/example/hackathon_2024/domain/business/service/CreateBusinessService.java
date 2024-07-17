@@ -34,8 +34,8 @@ public class CreateBusinessService {
                     .user(userFacade.currentUser())
                     .build());
 
-        if(!request.getTag_name().isEmpty()) {
-            request.getTag_name().stream()
+        if(!request.getTags().isEmpty()) {
+            request.getTags().stream()
                     .map(tagRepository::findByTagName)
                     .forEach(tag -> businessTagRepository.save(new BusinessTag(new BusinessTagId(), business, tag)));
         }

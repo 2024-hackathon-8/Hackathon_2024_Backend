@@ -24,5 +24,5 @@ public class BusinessRequest {
     @NotNull
     private Long totalInvestment;
 
-    private List<String> tag_name;
+    private List<String> tags;
 }

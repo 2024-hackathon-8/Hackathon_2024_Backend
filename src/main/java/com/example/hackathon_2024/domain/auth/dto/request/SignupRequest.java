@@ -22,5 +22,5 @@ public class SignupRequest {
     @NotNull
     private UserType user_type;
 
-    private List<String> tag_name;
+    private List<String> tags;
 }
