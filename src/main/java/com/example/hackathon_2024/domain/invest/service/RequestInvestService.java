@@ -1,6 +1,6 @@
 package com.example.hackathon_2024.domain.invest.service;
 
-import com.example.hackathon_2024.domain.alarm.dto.AlarmRequest;
+import com.example.hackathon_2024.domain.alarm.dto.request.AlarmRequest;
 import com.example.hackathon_2024.domain.alarm.entity.enums.AlarmType;
 import com.example.hackathon_2024.domain.alarm.service.CreateAlarmService;
 import com.example.hackathon_2024.domain.business.entity.Business;

@@ -63,10 +63,10 @@ public class CreateContractService {
                 .overdueQuarter(request.getOverdue_quarter())
                 .overdueRatio(request.getOverdue_ratio())
                 .specialMatter(request.getSpecial_matter())
-                .address(request.getAddress())
-                .representativeName(user.getName())
-                .representativePhoneNumber(user.getPhoneNumber())
-                .signatureImgUrl(request.getSignature_img_url())
+                .addressA(request.getAddress())
+                .representativeNameA(user.getName())
+                .representativePhoneNumberA(user.getPhoneNumber())
+                .signatureImgUrlA(request.getSignature_img_url())
                 .build();
     }
 

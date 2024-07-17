@@ -1,5 +1,6 @@
 package com.example.hackathon_2024.domain.contract.entity;
 
+import com.example.hackathon_2024.domain.contract.dto.request.ConclusionRequest;
 import com.example.hackathon_2024.domain.invest.entity.Invest;
 import jakarta.persistence.Column;
 import jakarta.persistence.ElementCollection;
@@ -70,15 +71,34 @@ public class Contract {
     @ElementCollection(fetch = FetchType.EAGER)
     private List<String> specialMatter;
 
-    @Column(name = "address", nullable = false)
-    private String address;
+    @Column(name = "address_a", nullable = false)
+    private String addressA;
 
-    @Column(name = "representative_name", nullable = false)
-    private String representativeName;
+    @Column(name = "representative_name_a", nullable = false)
+    private String representativeNameA;
 
-    @Column(name = "representative_phone_number", nullable = false)
-    private String representativePhoneNumber;
+    @Column(name = "representative_phone_number_a", nullable = false)
+    private String representativePhoneNumberA;
 
-    @Column(name = "signature_img_url", nullable = false)
-    private String signatureImgUrl;
+    @Column(name = "signature_img_url_a", nullable = false)
+    private String signatureImgUrlA;
+
+    @Column(name = "address_b")
+    private String addressB;
+
+    @Column(name = "representative_name_b")
+    private String representativeNameB;
+
+    @Column(name = "representative_phone_number_b")
+    private String representativePhoneNumberB;
+
+    @Column(name = "signature_img_url_b")
+    private String signatureImgUrlB;
+
+    public void conclusionContract(String addressB, String representativeNameB, String representativePhoneNumberB, String signatureImgUrlB) {
+        this.addressB = addressB;
+        this.representativeNameB = representativeNameB;
+        this.representativePhoneNumberB = representativePhoneNumberB;
+        this.signatureImgUrlB = signatureImgUrlB;
+    }
 }

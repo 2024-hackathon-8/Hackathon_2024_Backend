@@ -1,6 +1,6 @@
 package com.example.hackathon_2024.domain.alarm.service;
 
-import com.example.hackathon_2024.domain.alarm.dto.AlarmRequest;
+import com.example.hackathon_2024.domain.alarm.dto.request.AlarmRequest;
 import com.example.hackathon_2024.domain.alarm.entity.Alarm;
 import com.example.hackathon_2024.domain.alarm.repository.AlarmRepository;
 import com.example.hackathon_2024.domain.user.exception.UserNotFoundException;

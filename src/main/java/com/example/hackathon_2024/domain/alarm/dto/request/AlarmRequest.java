@@ -1,4 +1,4 @@
-package com.example.hackathon_2024.domain.alarm.dto;
+package com.example.hackathon_2024.domain.alarm.dto.request;
 
 import com.example.hackathon_2024.domain.alarm.entity.enums.AlarmType;
 import jakarta.validation.constraints.NotBlank;

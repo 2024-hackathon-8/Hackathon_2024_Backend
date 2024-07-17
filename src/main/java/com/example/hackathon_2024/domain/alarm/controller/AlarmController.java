@@ -1,6 +1,6 @@
 package com.example.hackathon_2024.domain.alarm.controller;
 
-import com.example.hackathon_2024.domain.alarm.dto.AlarmRequest;
+import com.example.hackathon_2024.domain.alarm.dto.request.AlarmRequest;
 import com.example.hackathon_2024.domain.alarm.service.CreateAlarmService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;

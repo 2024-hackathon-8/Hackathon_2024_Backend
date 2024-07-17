@@ -41,10 +41,10 @@ public class ContractDetailsService {
                 .overdue_quarter(contract.getOverdueQuarter())
                 .overdue_ratio(contract.getOverdueRatio())
                 .special_matter(contract.getSpecialMatter())
-                .address(contract.getAddress())
-                .representative_name(contract.getRepresentativeName())
-                .representative_phone_number(contract.getRepresentativePhoneNumber())
-                .signature_img_url(contract.getSignatureImgUrl())
+                .address(contract.getAddressA())
+                .representative_name(contract.getRepresentativeNameA())
+                .representative_phone_number(contract.getRepresentativePhoneNumberA())
+                .signature_img_url(contract.getSignatureImgUrlA())
                 .build();
     }
 }
